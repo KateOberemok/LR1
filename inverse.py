@@ -1,4 +1,5 @@
 from enter_data import *
+
 def vector_y(l_matrix, n, counter):
     b = [0] * n
     b[counter] = 1
@@ -14,20 +15,13 @@ def vector_x(u_matrix, n, b):
         for j in range(i):
             x[n - i - 1] -= u_matrix[n - i - 1][n - i + j] * x[n - i + j]
         x[n - i - 1] /= u_matrix[n - i - 1][n - i - 1]
-    print(x)
+    #print(x)
     return x
 
-
-
-l_matrix = [[1,0,0],[-12/13,1,0],[4/13,7/5,1]]
-u_matrix = [[13,-5,-12],[0,5/13,-144/13],[0,0,-14/5]]
-
-inverse_matrix = zero_matrix(3)
-
-for p in range(3):
-    x = vector_x(u_matrix, 3, vector_y(l_matrix, 3, p))
-    for q in range(3):
-        inverse_matrix[q][p] = x[q]
-
-for i in range(3):
-    print(inverse_matrix[i])
+def inverse(u_matrix, l_matrix, n):
+    inverse_matrix = zero_matrix(n)
+    for p in range(n):
+        x = vector_x(u_matrix, n, vector_y(l_matrix, n, p))
+        for q in range(n):
+            inverse_matrix[q][p] = x[q]
+    return inverse_matrix
