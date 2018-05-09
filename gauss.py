@@ -53,11 +53,7 @@ matrix_test = copy.deepcopy(matrix_R)
 matrix_Gauss = copy.deepcopy(matrix_R)
 nonw = [0] * n
 
-f = open('answers.txt', 'w')
-for i in range(n):
-    for j in range(n):
-        f.write(str(matrix_R[i][j]))
-f.close()
+
 
 for counter in range(n - 1): #прямой ход
     if math.fabs(matrix_R[counter][counter]) > sys.float_info.epsilon*5:
