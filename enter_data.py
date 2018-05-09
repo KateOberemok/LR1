@@ -10,7 +10,11 @@ def identity_matrix(n): #единичная матрица
     return matrix
 
 def zero_matrix(n): #единичная матрица
-    matrix = [[0]*n]*n
+    matrix = []
+    for i in range(n):
+        matrix.append([])
+        for j in range(n):
+            matrix[i].append(0)
     return matrix
 
 def enter_matrix(n): #ввод матрицы nxn
