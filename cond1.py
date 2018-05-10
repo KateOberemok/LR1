@@ -28,4 +28,3 @@ def maximum(vector):
         if vector[i] > max:
             max = vector[i]
     return max
-
