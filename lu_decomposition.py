@@ -27,10 +27,10 @@ def lu_decomposition(matrix, n):
             else:
                 marker = -1
                 break
-    #for i in range(n):
-    #    if u_matrix[i][i] < sys.float_info.epsilon:
+    for i in range(n):
+        if u_matrix[i][i] < sys.float_info.epsilon:
 
-    #        marker = -1
+            marker = -1
     if marker == 0:
         return u_matrix, l_matrix
     else:
