@@ -4,6 +4,11 @@ def inverse_matrix_gauss(n, matrix_R):
     matrix_E = identity_matrix(n)
     inverse_matrix = 1
 
+    def print_matrix(matrix):
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                print('{:>6}'.format(round(matrix[i][j], 3).__str__()), end=' ')
+            print("\n")
 
     def divide_string(str, div): #деление строки на число
         for j in range(len(str)):
@@ -55,10 +60,6 @@ def inverse_matrix_gauss(n, matrix_R):
                 subtraction_string(matrix_E[n - counter - 1], matrix_E[n - i - counter - 2], multiplier)
 
         print("")
-        for i in range(n):
-            for j in range(n):
-                matrix_E[i][j] = round(matrix_E[i][j], 2)
-            print(matrix_E[i])
+        return (matrix_E)
     else:
-        print("обратной матрицы нет!")
-
+        return ("обратной матрицы нет!")
