@@ -1,6 +1,6 @@
 from enter_data import *
 
-def vector_y(l_matrix, n, counter):
+def vector_y(l_matrix, n, counter):#решение ур-ния Ly = b
     b = [0] * n
     b[counter] = 1
     for i in range(counter + 1, n):
@@ -8,14 +8,13 @@ def vector_y(l_matrix, n, counter):
             b[i] -= l_matrix[i][i-j-1]*b[i-j-1]
     return b
 
-def vector_x(u_matrix, n, b):
+def vector_x(u_matrix, n, b):#решение ур-ния Ux = y
     x = [0] *n
     for i in range(n):
         x[n - 1 - i] = b[n - 1 - i]
         for j in range(i):
             x[n - i - 1] -= u_matrix[n - i - 1][n - i + j] * x[n - i + j]
         x[n - i - 1] /= u_matrix[n - i - 1][n - i - 1]
-    #print(x)
     return x
 
 def inverse(u_matrix, l_matrix, n):
