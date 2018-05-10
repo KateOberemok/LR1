@@ -9,7 +9,7 @@ def identity_matrix(n): #единичная матрица
                 matrix[i].append(0)
     return matrix
 
-def zero_matrix(n): #единичная матрица
+def zero_matrix(n): #нулевая матрица
     matrix = []
     for i in range(n):
         matrix.append([])
@@ -26,6 +26,6 @@ def enter_matrix(n): #ввод матрицы nxn
             break
         else:
             for element in range(len(list)):
-                list[element] = int(list[element])
+                list[element] = float(list[element])
             matrix.append(list)
     return matrix
